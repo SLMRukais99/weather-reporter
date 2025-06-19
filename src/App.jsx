@@ -3,7 +3,7 @@ import SearchBar from "./components/SearchBar";
 import WeatherCard from "./components/WeatherCard";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorAlert from "./components/ErrorAlert";
-import WelcomeMessage from "./components/WelcomeMessage";
+
 import { fetchWeatherData } from "./services/weatherAPI";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [location, setLocation] = useState("Colombo");
   const [error, setError] = useState(null);
-  const [firstLoad, setFirstLoad] = useState(true);
+ // const [firstLoad, setFirstLoad] = useState(true);
 
   const handleWeatherFetch = async (city) => {
     setLoading(true);
@@ -21,7 +21,7 @@ function App() {
       const data = await fetchWeatherData(city);
       setWeather(data);
       setError(null);
-      setFirstLoad(false);
+  //    setFirstLoad(false);
       updateBackground(data);
     } catch (err) {
       console.error("Error fetching weather:", err);
@@ -55,7 +55,7 @@ function App() {
 
   useEffect(() => {
     handleWeatherFetch(location);
-    // eslint-disable-next-line
+    
   }, []);
 
   const handleSearch = (city) => {
@@ -65,6 +65,7 @@ function App() {
 
   return (
     <div className="container py-4">
+
       {/* Header */}
       <div className="text-center mb-5">
         <h1 className="display-4 fw-bold location-title mb-3">
@@ -84,11 +85,9 @@ function App() {
       {/* Loading Spinner */}
       {loading && <LoadingSpinner />}
 
-      {/* Welcome Message */}
-      {firstLoad && !loading && <WelcomeMessage />}
-
+     
       {/* Weather Data */}
-      {weather && !loading && !firstLoad && (
+      {weather && !loading && (
         <WeatherCard weather={weather} />
       )}
     </div>
