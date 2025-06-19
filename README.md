@@ -1,12 +1,50 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌤️ Weather Reporter
 
-Currently, two official plugins are available:
+A clean and simple weather application built with React (Vite) that allows users to search for current weather conditions in any city using the WeatherAPI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+👉 [weather-reporter-sand.vercel.app](https://weather-reporter-sand.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🔍 **City Search**: Get weather by typing any city name
+- 📍 **Initial Load**: Shows weather for Colombo by default
+- 🌡️ **Weather Details**: Temperature, Humidity, Wind, UV Index, etc.
+- 🌤️ **Condition Icons**: Displays icons based on live weather condition
+- ⏱️ **Loading Indicator**: Spinner while fetching data
+- 📛 **Error Handling**: Gracefully shows error if city is not found
+- 📈 **Additional Data**: Includes feels-like temperature, visibility, cloud cover, pressure, wind direction, and more
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React (Vite)
+- **API**: [WeatherAPI.com](https://www.weatherapi.com)
+- **Styling**: CSS
+- **Deployment**: Vercel
+
+---
+
+## 📦 Installation & Running Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/YOUR_USERNAME/weather-reporter.git
+cd weather-reporter
+
+# 2. Install dependencies
+npm install
+
+# 3. Add your WeatherAPI key
+touch .env
+
+VITE_WEATHER_API_KEY=your_api_key_here
+
+# 4. Start development server
+npm run dev
